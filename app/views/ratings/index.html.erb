@@ -1,11 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h2>List of ratings</h2>
-<p>To be completed..</p>
+<p>All ratings: <%= @ratings.count %></p>
 
 <ul>
   <% @ratings.each do |rating| %>
+  <li><%=rating.beer.name%>  <%=rating.score %></li>
+  <% end %>
 </ul>
-
-<br>
-
