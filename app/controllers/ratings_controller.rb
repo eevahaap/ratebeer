@@ -4,7 +4,9 @@ class RatingsController < ApplicationController
   end
 
   def new
+    @beers = Beer.all
     @rating = Rating.new
+
   end
 
   def create
