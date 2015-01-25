@@ -15,5 +15,14 @@ Number of beers <%=@brewery.beers.count %>
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
-<%= link_to 'Back', breweries_path %>
+<p>
+
+  <% if @brewery.ratings.empty? %>
+    Beers has no ratings.
+  <% else %>
+      Has: <%= pluralize(@brewery.ratings.count, "rating") %> , average  <%=@brewery.ratings.average(:score)%>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_brewery_path(@brewery) %>
+
