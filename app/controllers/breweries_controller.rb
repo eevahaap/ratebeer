@@ -5,7 +5,7 @@ class BreweriesController < ApplicationController
   # GET /breweries.json
   def index
     @breweries = Brewery.all
-    render :index
+
   end
 
   # GET /breweries/1
