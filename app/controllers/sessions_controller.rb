@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id if not user.nil?
 
-    redirect_to user
+    redirect_to users_path
   end
 
   def destroy

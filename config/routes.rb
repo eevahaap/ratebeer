@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   get 'singup', to:'users#new'
 
+  get 'signin', to: 'sessions#new'
+  delete 'signout', to: 'sessions#destroy'
+
+
  # get '/', to: 'breweries#index'
  # get 'ratings', to: 'ratings#index'
  # get 'ratings/new', to:'ratings#new'
