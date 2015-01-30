@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  resources :users
+
   resources :beers
 
   resources :breweries
 
   resources :ratings, only: [:index, :new, :create, :destroy]
+
+  resource :session, only: [:new, :create, :delete]
+
+  get 'singup', to:'users#new'
 
  # get '/', to: 'breweries#index'
  # get 'ratings', to: 'ratings#index'
