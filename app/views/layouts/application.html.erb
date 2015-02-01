@@ -28,15 +28,7 @@
 
 <%= yield %>
 
-  <% if session[:last_rating].nil? %>
-    <p>no ratings given</p>
-  <% else %>
-    <p>previous rating: <%= session[:last_rating] %></p>
-  <% end %>
 
-  <% if not current_user.nil? %>
-    <p><%= current_user.username %> signed in</p>
-<% end %>
 
 </body>
 
