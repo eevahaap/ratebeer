@@ -7,16 +7,28 @@
 <p>
   <%= "Has made "  + pluralize(@user.ratings.to_a.count.to_s, "rating")%>
 
+
 </p>
 
 <p>
-  <b>ratings: </b>
+  <strong>ratings: </strong>
 <ul>
   <% @user.ratings.each do |r| %>
       <li ><%= r %>
         <% if @user == current_user %> <%= link_to 'Delete', r, method: :delete %> </li> <% end %>
   <% end %>
 </ul>
+</p>
+
+<p>
+  <% unless @user.beer_clubs.nil? %>
+      member of:
+
+      <% @user.beer_clubs.each do |beer_club| %>
+          <%= link_to beer_club.name, beer_club %>
+      <% end %>
+
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
