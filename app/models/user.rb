@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
- # validates :username, uniqueness: true,
-  #          length: {in: 3..15}
+  validates :username, uniqueness: true,
+            length: {in: 3..15}
   validates :password, format: { with: /(?=.*\d)(?=.*[A-Z])/, message: "must have at least one capital and one number" }
 
   has_many :ratings
