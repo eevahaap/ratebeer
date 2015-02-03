@@ -8,7 +8,7 @@
   <li>
     <%= rating.beer.name %>
     <%= rating.score %>
-    <%= link_to rating.user.username, rating.user %>
+    <%= rating %> <%= link_to rating.user.username, user_path(rating.user) %>
   </li>
 
   <% end %>
