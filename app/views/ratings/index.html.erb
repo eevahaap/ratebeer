@@ -6,8 +6,6 @@
 <ul>
   <% @ratings.each do |rating| %>
   <li>
-    <%= rating.beer.name %>
-    <%= rating.score %>
     <%= rating %> <%= link_to rating.user.username, user_path(rating.user) %>
   </li>
 
