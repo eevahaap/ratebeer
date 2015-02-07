@@ -10,16 +10,32 @@ RSpec.describe User, type: :model do
 
   end
 
-  it "is not saved without a password" do
-    user = User.create username: "Pekka"
+  describe "is not saved" do
 
-    expect(user).not_to be_valid
-    expect(User.count).to eq(0)
-  end
+   it "with password that's too short" do
+      user = User.create username: "Pekka", password: "A1", password_confirmation: "A1"
+      expect(user.valid?).to be(false)
+      expect(User.count).to eq(0)
+     end
+
+    it "with password that doesn't contain a non-letter character" do
+     user = User.create username: "Pekka", password: "abcdefgh", password_confirmation: "abcdefgh"
+      expect(user.valid?).to be(false)
+      expect(User.count).to eq(0)
+    end
+
+    it "without a proper password" do
+      user = User.create username: "Pekka"
+      expect(user.valid?).to be(false)
+      expect(User.count).to eq(0)
+      end
+    end
 
 
   describe "with a proper password" do
     let(:user){ User.create username:"Pekka", password:"Secret1", password_confirmation:"Secret1" }
+
+
 
     it "is saved" do
       expect(user).to be_valid
@@ -34,7 +50,7 @@ RSpec.describe User, type: :model do
       user.ratings << rating2
 
       expect(user.ratings.count).to eq(2)
-     # expect(user.average_rating).to eq(20.0)
+      expect(user.average_rating).to eq(20.0)
     end
   end
 
