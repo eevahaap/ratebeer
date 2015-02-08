@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
     ratings.order(score: :desc).limit(1).first.beer
   end
 
+  def favorite_brewery
+    favorite :brewery
+  end
+
   def favorite_style
     favorite :style
   end
