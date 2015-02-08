@@ -1,3 +1,5 @@
 Linkki Heroku-instanssiin: 
 
 https://polar-bastion-2993.herokuapp.com/breweries
+
+https://travis-ci.org/eevahaap/ratebeer
