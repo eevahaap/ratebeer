@@ -12,5 +12,4 @@ script:
 deploy:
     provider: heroku
     api_key: aed09b5a-6ae2-40e4-8e8d-f67e853988b7
-    app: ratebeer
     run: "rake db:migrate"
