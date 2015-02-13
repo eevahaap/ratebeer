@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :delete]
 
+  resources :places, only:[:index, :show]
+
   get 'signup', to:'users#new'
 
   get 'signin', to: 'sessions#new'
@@ -20,9 +22,9 @@ Rails.application.routes.draw do
 
   root 'breweries#index'
 
-  get 'places', to: 'places#index'
-
   post 'places', to:'places#search'
+
+
 
  # get '/', to: 'breweries#index'
  # get 'ratings', to: 'ratings#index'
