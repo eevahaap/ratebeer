@@ -634,21 +634,21 @@
       "/Users/eevahaapakangas/ratebeer/lib/beermapping_api.rb": [
         1,
         1,
-        1,
+        5,
+        null,
+        5,
+        5,
+        null,
+        5,
+        null,
+        4,
+        4,
+        6,
+        null,
+        null,
         null,
         1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
+        5,
         null,
         null
       ],
@@ -714,6 +714,6 @@
         null
       ]
     },
-    "timestamp": 1423849512
+    "timestamp": 1423850413
   }
 }
