@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   root 'breweries#index'
 
+  get 'places', to: 'places#index'
+
+  post 'places', to:'places#search'
+
  # get '/', to: 'breweries#index'
  # get 'ratings', to: 'ratings#index'
  # get 'ratings/new', to:'ratings#new'

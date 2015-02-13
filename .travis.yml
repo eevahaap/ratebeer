@@ -9,6 +9,6 @@ script:
  - bundle exec rake db:test:prepare
  - bundle exec rspec -fd spec/
 
- deploy:
+deploy:
     provider: heroku
     api_key: "aed09b5a-6ae2-40e4-8e8d-f67e853988b7"
