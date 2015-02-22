@@ -1,4 +1,8 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :style do
+    name "MyString"
+description "MyText"
+  end
+
 
 
 

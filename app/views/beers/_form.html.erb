@@ -16,10 +16,10 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :style %><br>
-    <%= f.collection_select :style, @styles, :to_s, :to_s %>
-  </div>
+    <div class="field">
+      <%= f.label :style_id %><br>
+      <%= f.select :style_id, options_from_collection_for_select(@styles, :id, :name, @beer.style_id) %>
+    </div>
 
   <div class="field">
     <%= f.label :brewery_id %><br>

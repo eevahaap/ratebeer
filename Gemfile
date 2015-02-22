@@ -65,5 +65,11 @@ group :development, :test do
 
   gem 'simplecov', require: false
 
+  gem 'bootstrap-sass'
+
+  group :development do
+    gem 'rails_layout'
+  end
+
 end
 

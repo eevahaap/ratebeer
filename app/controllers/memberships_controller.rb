@@ -29,15 +29,19 @@ class MembershipsController < ApplicationController
   # POST /memberships
   # POST /memberships.json
   def create
-    @membership = Membership.new(membership_params.merge({ user: current_user }))
-    if @membership.save
-      current_user.memberships << @membership
-      redirect_to @membership.beer_club, notice: "#{@membership.user.username}, welcome to the club!"
-    else
-      @beer_clubs = beer_clubs_without_current_user_as_member
-      render :new
+    @membership = Membership.new(membership_params)
+    @membership.user = current_user
+    respond_to do |format|
+      if @membership.save
+        format.html { redirect_to @membership.beer_club, notice: "#{current_user.username} welcome to the club!" }
+        format.json { render :show, status: :created, location: @membership }
+      else
+        @beer_clubs = BeerClub.all.reject{ |b| b.members.include? current_user }
+        format.html { render :new }
+        format.json { render json: @membership.errors, status: :unprocessable_entity }
+      end
     end
-  end
+    end
 
   # PATCH/PUT /memberships/1
   # PATCH/PUT /memberships/1.json

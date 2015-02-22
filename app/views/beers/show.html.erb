@@ -2,7 +2,7 @@
 
 <p>
   <strong>Style:</strong>
-  <%= @beer.style %>
+  <%= link_to @beer.style, @beer %>
 </p>
 
 <% if @beer.ratings.empty? %>
@@ -21,6 +21,6 @@
         <%= f.submit %>
     <% end %>
 
-    <%= link_to 'Edit', edit_beer_path(@beer) %>
+    <%= link_to 'Edit', edit_beer_path(@beer), class:'btn btn-primary' %>
 
 <% end %>
